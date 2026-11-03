@@ -53,6 +53,11 @@ public class Main {
     loadStudentData();
     loadProfessorData();
     loadCourseData();
+
+    // Part2 fix add loading method
+    // Take loading order into account
+    loadTeachesData();
+
     loadTranscriptData();
   }
 
@@ -83,4 +88,13 @@ public class Main {
     });
     CMS.commit();
   }
+
+  // Part2 fix add loading method
+  public static void loadTeachesData() throws SQLException {
+    CMS.addSqlChange(ctx -> {
+      LoadTeaches.execute(ctx);
+    });
+    CMS.commit();
+  }
+
 }
