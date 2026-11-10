@@ -1,0 +1,2 @@
+-- Part3: returns only the courses whichgraduate students may enroll 
+COPY (SELECT courseId, courseName FROM course WHERE gradCourse IN (1, 2)) TO 'src/main/resources/data/output/gradCourses.csv'(HEADER TRUE);

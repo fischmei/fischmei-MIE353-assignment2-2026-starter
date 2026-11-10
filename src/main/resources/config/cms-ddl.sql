@@ -1,7 +1,9 @@
 -- Schema for courses.csv (entity type Course)
+-- Part 3: Update for gradCourse
 CREATE TABLE course (
     courseId   VARCHAR(20) PRIMARY KEY,
-    courseName VARCHAR(255) NOT NULL
+    courseName VARCHAR(255) NOT NULL,
+    gradCourse INT NOT NULL CHECK (gradCourse IN (0, 1, 2))
 );
 
 -- Schema for professors.csv
